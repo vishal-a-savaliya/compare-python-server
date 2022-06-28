@@ -11,12 +11,12 @@ def getProducts(query):
 
     headers = {
         "User-Agent":
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.19582"
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36"
     }
 
     params = {"q": "dji", "hl": "en", 'gl': 'in', 'tbm': 'shop'}
 
-    response = requests.get(f"https://www.google.com/search?q={query}",
+    response = requests.get(f"https://www.google.com/search?hl=en&q={query}",
                             params=params,
                             headers=headers)
 
