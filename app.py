@@ -17,7 +17,7 @@ def getProducts(query):
     params = {"hl": "en", 'gl': 'in', 'tbm': 'shop'}
     cookies = {"CONSENT": "YES+cb.20210720-07-p0.en+FX+410"}
 
-    response = requests.get(f"https://www.google.com/search?hl=en-IN&gl=IN&ceid=IN:en&q={query}",
+    response = requests.get(f"https://www.google.co.in/search?hl=en-IN&gl=IN&ceid=IN:en&q={query}",
                             params=params,
                             headers=headers, 
                             cookies=cookies)
@@ -96,9 +96,9 @@ def getProducts(query):
 def getSite(search):
 
     # URL
-    url = [f"https://www.google.com/search?hl=en-IN&gl=IN&ceid=IN:en&q={search}",
-           f"https://www.google.com/search?hl=en-IN&gl=IN&ceid=IN:en&q={search}&start=10",
-           f"https://www.google.com/search?hl=en-IN&gl=IN&ceid=IN:en&q={search}&start=20"
+    url = [f"https://www.google.co.in/search?hl=en-IN&gl=IN&ceid=IN:en&q={search}",
+           f"https://www.google.co.in/search?hl=en-IN&gl=IN&ceid=IN:en&q={search}&start=10",
+           f"https://www.google.co.in/search?hl=en-IN&gl=IN&ceid=IN:en&q={search}&start=20"
            ]
 
     data = set()
