@@ -14,11 +14,13 @@ def getProducts(query):
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36"
     }
 
-    params = {"q": "dji", "hl": "en", 'gl': 'in', 'tbm': 'shop'}
+    params = {"hl": "en", 'gl': 'in', 'tbm': 'shop'}
+    cookies = {"CONSENT": "YES+cb.20210720-07-p0.en+FX+410"}
 
     response = requests.get(f"https://www.google.com/search?hl=en&q={query}",
                             params=params,
-                            headers=headers)
+                            headers=headers, 
+                            cookies=cookies)
 
     soup = BeautifulSoup(response.text, 'html.parser')
     #
