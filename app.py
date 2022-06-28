@@ -149,4 +149,4 @@ def sites(query):
     # return f"hiii this is {query}"
 
 if __name__ == '__main__':
-    app.run(port=8000)
+    app.run()
