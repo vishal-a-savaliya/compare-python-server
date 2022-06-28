@@ -15,7 +15,7 @@ def getProducts(query):
     }
 
     params = {"hl": "en", 'gl': 'in', 'tbm': 'shop'}
-    cookies = {"CONSENT": "YES"}
+    cookies = {"CONSENT": "YES+cb.20210720-07-p0.en+FX+410"}
 
     response = requests.get(f"https://www.google.com/search?hl=en-IN&gl=IN&ceid=IN:en&q={query}",
                             params=params,
