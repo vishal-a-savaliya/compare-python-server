@@ -24,7 +24,8 @@ def getProducts(query):
     #
     #
     #  list with two dict() combined
-
+    retrun soup
+    
     shopping_data = []
     inline_results_dict = {}
     shopping_results_dict = {}
@@ -86,7 +87,8 @@ def getProducts(query):
 
         shopping_data.append(dict(shopping_results_dict))
 
-    return json.dumps(shopping_data, indent=2, ensure_ascii=False)
+#     return json.dumps(shopping_data, indent=2, ensure_ascii=False)
+      
 
 
 def getSite(search):
