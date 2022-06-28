@@ -143,7 +143,7 @@ def home():
 
 @app.route('/search/<query>')
 def search(query):
-    return getProducts(query)
+    return str(getProducts(query))
 
 @app.route('/sites/<query>')
 def sites(query):
