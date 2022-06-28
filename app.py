@@ -24,7 +24,7 @@ def getProducts(query):
     #
     #
     #  list with two dict() combined
-    retrun soup
+    return soup
     
     shopping_data = []
     inline_results_dict = {}
