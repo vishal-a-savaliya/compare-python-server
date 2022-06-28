@@ -26,7 +26,7 @@ def getProducts(query):
     #
     #
     #  list with two dict() combined
-    return soup
+    #  return soup
     
     shopping_data = []
     inline_results_dict = {}
@@ -89,16 +89,16 @@ def getProducts(query):
 
         shopping_data.append(dict(shopping_results_dict))
 
-#     return json.dumps(shopping_data, indent=2, ensure_ascii=False)
+    return json.dumps(shopping_data, indent=2, ensure_ascii=False)
       
 
 
 def getSite(search):
 
     # URL
-    url = [f"https://www.google.com/search?&q={search}",
-           f"https://www.google.com/search?&q={search}&start=10",
-           f"https://www.google.com/search?&q={search}&start=20"
+    url = [f"https://www.google.com/search?hl=en&q={search}",
+           f"https://www.google.com/search?hl=en&q={search}&start=10",
+           f"https://www.google.com/search?hl=en&q={search}&start=20"
            ]
 
     data = set()
@@ -114,8 +114,16 @@ def getSite(search):
 
 def searchSite(url, list):
 
+    headers = {
+        "User-Agent":
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)"
+    }
+
+    params = {"hl": "en", 'gl': 'in' }
+    cookies = {"CONSENT": "YES+cb.20210720-07-p0.en+FX+410"}
+    
     # Sending HTTP request
-    req = requests.get(url)
+    req = requests.get(url, headers=headers, params=params, cookies=cookies)
 
     # Pulling HTTP data from internet
     sor = BeautifulSoup(req.text, "html.parser")
