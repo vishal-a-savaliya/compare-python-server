@@ -12,12 +12,11 @@ def home():
 
 @app.route('/search/<query>')
 def search(query):
-    return getProducts(query)
+    return str(getProducts(query))
 
 @app.route('/sites/<query>')
 def sites(query):
     return getSite(query)
-    # return f"hiii this is {query}"
 
 if __name__ == '__main__':
     app.run(port=8000)
