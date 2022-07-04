@@ -19,7 +19,7 @@ def getProducts(query):
 
     soup = BeautifulSoup(response.text, 'html.parser')
 
-    # return(soup)
+    return(soup)
      
     shopping_data = []
     shopping_results_dict = {}
@@ -65,4 +65,4 @@ def getProducts(query):
     return json.dumps(shopping_data, indent=2, ensure_ascii=False)
 
 
-print(getProducts('kishan jam'))
+# print(getProducts('kishan jam'))
