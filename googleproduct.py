@@ -19,7 +19,7 @@ def getProducts(query):
 
     soup = BeautifulSoup(response.text, 'html.parser')
 
-    return(soup)
+#     return(soup)
      
     shopping_data = []
     shopping_results_dict = {}
