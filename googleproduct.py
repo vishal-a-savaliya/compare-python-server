@@ -55,7 +55,7 @@ def getProducts(query):
     for shopping_result in soup.select('.sh-dgr__content'):
 
         title = shopping_result.select_one('.Lq5OHe.eaGTj h4').text
-        image = shopping_result.selec_one('.ArOc1c img')['src']
+        image = shopping_result.select_one('.ArOc1c img')['src']
         product_link = f"https://www.google.com{shopping_result.select_one('.Lq5OHe.eaGTj')['href']}"
         source = shopping_result.select_one('.IuHnof').text
         price = shopping_result.select_one('span.kHxwFf span').text
