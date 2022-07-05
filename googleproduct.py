@@ -20,7 +20,7 @@ def getProducts(query):
                             cookies=cookies)
 
     soup = BeautifulSoup(response.text, 'html.parser')
-    return soup
+#     return soup
 
     shopping_data = []
     inline_results_dict = {}
