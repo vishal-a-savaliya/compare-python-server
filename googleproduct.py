@@ -14,14 +14,15 @@ def getProducts(query):
     params = {"hl": "en", 'gl': 'in', 'tbm': 'shop'}
     cookies = {"CONSENT": "YES+cb.20210720-07-p0.en+FX+410"}
 
-    response = requests.get(f"https://www.google.co.in/search?hl=en-IN&gl=IN&ceid=IN:en&q={query}",
+    response = requests.get(f"https://www.google.com/search?hl=en-IN&gl=IN&ceid=IN:en&q={query}",
                             params=params,
                             headers=headers,
                             cookies=cookies)
 
     soup = BeautifulSoup(response.text, 'html.parser')
+#     return soup
 
-    shopping_data = []
+    shopping_data = set()
     inline_results_dict = {}
     shopping_results_dict = {}
     # images = {}
@@ -49,7 +50,7 @@ def getProducts(query):
 
         })
 
-        shopping_data.append(dict(inline_results_dict))
+        shopping_data.add(dict(inline_results_dict))
 
     for shopping_result in soup.select('.sh-dgr__content'):
 
@@ -88,9 +89,9 @@ def getProducts(query):
 
         })
 
-        shopping_data.append(dict(shopping_results_dict))
+        shopping_data.add(dict(shopping_results_dict))
 
-    shopping_data.sort(key=lambda x: x["price"])
+    # shopping_data.sort(key=lambda x: x["price"])
 
     return json.dumps(shopping_data, indent=2, ensure_ascii=False)
 
