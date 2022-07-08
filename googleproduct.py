@@ -22,7 +22,7 @@ def getProducts(query):
     soup = BeautifulSoup(response.text, 'html.parser')
 #     return soup
 
-    shopping_data = set()
+    shopping_data = []
     inline_results_dict = {}
     shopping_results_dict = {}
     # images = {}
@@ -50,7 +50,7 @@ def getProducts(query):
 
         })
 
-        shopping_data.add(dict(inline_results_dict))
+        shopping_data.append(dict(inline_results_dict))
 
     for shopping_result in soup.select('.sh-dgr__content'):
 
@@ -89,9 +89,9 @@ def getProducts(query):
 
         })
 
-        shopping_data.add(dict(shopping_results_dict))
+        shopping_data.append(dict(shopping_results_dict))
 
-    # shopping_data.sort(key=lambda x: x["price"])
+    shopping_data.sort(key=lambda x: x["price"])
 
     return json.dumps(shopping_data, indent=2, ensure_ascii=False)
 
