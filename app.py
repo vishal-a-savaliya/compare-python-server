@@ -1,6 +1,6 @@
 from flask import *
 # import requests, json
-from bs4 import BeautifulSoup
+# from bs4 import BeautifulSoup
 from googleproduct import getProducts
 from sites import getSite
 

@@ -34,6 +34,8 @@ def getProducts(query):
         inline_shopping_link = f"https://google.com{inline_result['href']}"
         inline_shopping_image = inline_result.div.img['src']
         inline_shopping_price = inline_result.select_one('b').text
+        inline_shopping_price = inline_shopping_price.split(' ')[0]
+        inline_shopping_price = inline_shopping_price.split('\xa0')[0]
         inline_shopping_source = inline_result.select_one(
             '.E5ocAb').text.strip()
 
@@ -59,6 +61,9 @@ def getProducts(query):
         product_link = f"https://www.google.com{shopping_result.select_one('.Lq5OHe.eaGTj')['href']}"
         source = shopping_result.select_one('.IuHnof').text
         price = shopping_result.select_one('span.kHxwFf span').text
+
+        price =price.split(' ')[0]
+        price =price.split('\xa0')[0]
 
         try:
             rating = shopping_result.select_one('.Rsc7Yb').text
